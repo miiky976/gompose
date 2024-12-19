@@ -2,6 +2,7 @@ package compose
 
 import (
 	"log"
+	"miiky976/comp/compose/modifier"
 
 	"github.com/gotk3/gotk3/gtk"
 )
@@ -28,21 +29,7 @@ func Init(comp Composable) {
 	gtk.Main()
 }
 
-type Modifier struct {
-	Space int
-	FillMaxWidth bool
-	FillMaxHeight bool
-}
-
-func NewEmptyModifier() Modifier{
-	return Modifier{
-		Space: 0,
-		FillMaxWidth: true,
-		FillMaxHeight: false,
-	}
-}
-
-func Button(modifier Modifier, label string, onclick func()) Composable{
+func Button(modifier modifier.Modifier, label string, onclick func()) Composable{
 	// do some stuff and operations
 	btn, err := gtk.ButtonNew()
 	if err != nil {log.Fatal(err)}
@@ -53,7 +40,7 @@ func Button(modifier Modifier, label string, onclick func()) Composable{
 	return Composable{btn}
 }
 
-func Column(modifier Modifier, content ...Composable) Composable {
+func Column(modifier modifier.Modifier, content ...Composable) Composable {
 	box, err := gtk.BoxNew(gtk.ORIENTATION_VERTICAL, modifier.Space)
 	if err != nil {log.Fatal(err)}
 	for _, i := range content {
@@ -65,7 +52,7 @@ func Column(modifier Modifier, content ...Composable) Composable {
 }
 
 
-func Row(modifier Modifier, content ...Composable) Composable {
+func Row(modifier modifier.Modifier, content ...Composable) Composable {
 	box, err := gtk.BoxNew(gtk.ORIENTATION_HORIZONTAL, modifier.Space)
 	if err != nil {log.Fatal(err)}
 	for _, i := range content {
