@@ -6,4 +6,4 @@ Made around GTK using gotk3 bindings.
 
 # Screenshots
 
-![Example of gompose.](https://github.com/miiky976/gompose/blob/master/example.png)
+![Example of gompose.](https://github.com/miiky976/gompose/blob/master/example.png?raw=true)
