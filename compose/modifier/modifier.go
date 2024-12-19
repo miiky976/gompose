@@ -6,7 +6,7 @@ type Modifier struct {
 	FillMaxHeight bool
 }
 
-func NewEmptyModifier() Modifier{
+func NewModifier() Modifier{
 	return Modifier{
 		Space: 0,
 		FillMaxWidth: true,

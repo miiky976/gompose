@@ -7,39 +7,39 @@ import (
 	"miiky976/comp/compose/modifier"
 )
 
-func App() compose.Composable{
-	return basic.Column(modifier.NewEmptyModifier(), 
-		compose.Button(
-			modifier.NewEmptyModifier(), 
-			"label1", 
-			func(){
+func App() compose.Composable {
+	return basic.Column(modifier.NewModifier(),
+		basic.Button(
+			modifier.NewModifier(),
+			basic.Label(modifier.NewModifier(), "label0"),
+			func() {
 				fmt.Println("Button 1 Clicked")
 			},
 		),
-		compose.Button(
-			modifier.NewEmptyModifier().FitMaxHeight(), 
-			"nooo", 
+		basic.Button(
+			modifier.NewModifier().FitMaxHeight(),
+			basic.Label(modifier.NewModifier(), "label1"),
 			func() {
 				fmt.Println("Button 2 clicked")
 			},
 		),
 		basic.Row(
-			modifier.NewEmptyModifier(), 
-			compose.Button(
-				modifier.NewEmptyModifier(), 
-				"nice", 
+			modifier.NewModifier(),
+			basic.Button(
+				modifier.NewModifier(),
+				basic.Label(modifier.NewModifier(), "label2"),
 				func() {},
-			), 
-			compose.Button(
-				modifier.NewEmptyModifier(), 
-				"pachuca", 
+			),
+			basic.Button(
+				modifier.NewModifier(),
+				basic.Label(modifier.NewModifier(), "label3"),
 				func() {},
-			), 
-			compose.Button(
-				modifier.NewEmptyModifier(), 
-				"beso", 
+			),
+			basic.Button(
+				modifier.NewModifier(),
+				basic.Label(modifier.NewModifier(), "label4"),
 				func() {},
-			), 
+			),
 		),
 	)
 }

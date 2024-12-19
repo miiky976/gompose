@@ -1,6 +1,6 @@
 # Compose in Go?
 
-Just a simple proff of concept of how Compose can be implemented in Go.
+Just a simple proof of concept of how Compose can be implemented in Go.
 
 Made around GTK using gotk3 bindings.
 

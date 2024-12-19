@@ -2,7 +2,6 @@ package compose
 
 import (
 	"log"
-	"miiky976/comp/compose/modifier"
 
 	"github.com/gotk3/gotk3/gtk"
 )
@@ -33,15 +32,4 @@ func Run(master *gtk.Window, app gtk.IWidget) {
 	master.Add(app)
 	master.ShowAll()
 	gtk.Main()
-}
-
-func Button(modifier modifier.Modifier, label string, onclick func()) Composable{
-	// do some stuff and operations
-	btn, err := gtk.ButtonNew()
-	if err != nil {log.Fatal(err)}
-	btn.SetLabel(label)
-	btn.Connect("clicked", onclick) 
-	btn.SetHExpand(modifier.FillMaxWidth)
-	btn.SetVExpand(modifier.FillMaxHeight)
-	return Composable{btn}
 }
