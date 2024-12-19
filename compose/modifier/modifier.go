@@ -14,3 +14,12 @@ func NewEmptyModifier() Modifier{
 	}
 }
 
+func (m Modifier) FitMaxHeight() Modifier {
+	m.FillMaxHeight = true
+	return m
+}
+
+func (m Modifier) FitMaxWidth() Modifier {
+	m.FillMaxWidth = true
+	return m
+}
